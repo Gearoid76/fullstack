@@ -4,9 +4,10 @@ module.exports = (req, res, next) => {
   function validEmail(email) {
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
   }
+  console.log(email);
 
   if (req.path === "/register") {
-    console.log(!email.length);
+    console.log(email.length);
     if (![name, email, password].every(Boolean)) {
       return res.status(401).json("Missing Credentials");
     } else if (!validEmail(email)) {

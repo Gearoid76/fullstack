@@ -1,10 +1,6 @@
 CREATE DATABASE nodelogin;
 
-CREATE TABLE Login_page (
-	user_id SERIAL PRIMARY KEY,
-	username  varchar ( 50 ) UNIQUE NOT NULL,
-	password  varchar ( 50 ) NOT NULL	
-);
+SERIAL
 CREATE TABLE Login_page (
 	user_id SERIAL PRIMARY KEY,
 	username  varchar ( 50 ),

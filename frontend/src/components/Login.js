@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import Header from "./Header";
+
 
 const Login = ({ setAuth }) => {
 
@@ -48,26 +50,30 @@ const Login = ({ setAuth }) => {
 
     return (
         <Fragment>
+            <Header />
             <h1 className="text-center my-5">Login</h1>
             <form onSubmit={onSubmitForm}>
-                <input 
-                    type="email" 
-                    name="email"
-                    placeholder="email" 
-                    className ="form-control my-3"
-                    value={email}
-                    onChange={e => onChange(e)}
-                />
-                <input 
-                    type="password" 
-                    name="password"
-                    placeholder="password" 
-                    className ="form-control my-3"
-                    value={password}
-                    onChange={e => onChange(e)}
-                />
-                <button className="btn btn-success btn-block">Submit</button> 
+                <div className="flex-container-login">
+                    <input 
+                        type="email" 
+                        name="email"
+                        placeholder="email" 
+                        className ="form-control my-3"
+                        value={email}
+                        onChange={e => onChange(e)}
+                    />
+                    <input 
+                        type="password" 
+                        name="password"
+                        placeholder="password" 
+                        className ="form-control my-3"
+                        value={password}
+                        onChange={e => onChange(e)}
+                    />
+                    <button className="btn btn-success btn-block">Submit</button> 
+                </div>
             </form>
+        
         <Link to="/register">Register</Link>
         </Fragment>
     );
